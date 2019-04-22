@@ -2,6 +2,7 @@
 
 ### 1
 ~~~
+#! /bin/bash
 dialog --yesno "¿Está seguro que desea eliminar el archivo o directorio?" 0 0;\
 case $? in
 0) # En caso de que el usuario seleccione "Sí".
@@ -24,6 +25,7 @@ esac
 
 ### 2
 ~~~
+#! /bin/bash
 Error(){
 echo "Error. Sintaxis de uso: $0 nombre_del_comando"
 }
@@ -36,6 +38,7 @@ fi
 
 ### 3
 ~~~
+#! /bin/bash
 USER=`whoami`
 if [ $USER == 'blas' ]; then
 	echo $USER
@@ -50,6 +53,7 @@ fi
 
 ### 4
 ~~~
+#! /bin/bash
 PALABRA=`cat ./palabra.txt`
 if [ $PALABRA == 'jm' ]; then
 	echo La palabra es correcta, $PALABRA
@@ -60,6 +64,7 @@ fi
 
 ### 5
 ~~~
+#! /bin/bash
 clear
 PS3='Introduce una opción: '
 opciones=("Sumar" "Restar" "Multiplicar" "Salir")
@@ -101,6 +106,7 @@ done
 
 ### 6
 ~~~
+#! /bin/bash
 echo "Introduce una edad"
 read n1
 if [ $n1 -gt 17 ];
@@ -113,6 +119,7 @@ fi
 
 ### 7
 ~~~
+#! /bin/bash
  if [ -f $1 ]; then
 echo "El parametro introducido es un fichero"
 ls -l $1
@@ -141,6 +148,7 @@ fi
 
 ### 8
 ~~~
+#! /bin/bash
 read -n 1 tecla
 case $tecla in
 [a-z,A-Z]) echo " ha introducido una letra"
@@ -154,6 +162,7 @@ esac
 
 ### 9
 ~~~
+#! /bin/bash
 cont=0
 contf=0
 
@@ -172,6 +181,7 @@ echo "Se han introducido $# parametros"
 
 ### 10
 ~~~
+#! /bin/bash
 echo """"
 echo "Bienvenido a la tienda Online - MERCADONA"
 echo ""
@@ -222,6 +232,7 @@ fi
 
 ### 11
 ~~~
+#! /bin/bash
 read -p "Introduzca la ruta de un directorio :" dir
 until [ -d $dir ]; do
 read -p "Introduzca la ruta de un directorio :" dir
@@ -241,6 +252,7 @@ echo "Se han introducido $# parametros"
 
 ### 12
 ~~~
+#! /bin/bash
 echo " la tabla de multiplicar de $1 es: "
 numerador=1
 while [ $numerador -lt 11 ]; do
@@ -252,6 +264,7 @@ done
 
 ### 13
 ~~~
+#! /bin/bash
 iptables -F
 iptables -X
 iptables -t nat -F
@@ -268,8 +281,9 @@ iptables -P OUTPUT ACCEPT
 iptables -I INPUT -j ACCEPT
 ~~~
 
-### 13
+### 14
 ~~~
+#! /bin/bash
 iptables -F
 iptables -X
 iptables -t nat -F
@@ -288,8 +302,9 @@ iptables -P FORWARD DROP
 iptables -P OUTPUT DROP
 ~~~
 
-### 14
+### 15
 ~~~
+#! /bin/bash
 ifconfig
 iptables -P INPUT ACCEPT
 iptables -P OUTPUT DROP
